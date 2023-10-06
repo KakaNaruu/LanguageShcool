@@ -27,7 +27,6 @@ namespace SchoolLanguage.Components
         public int DurationInSeconds { get; set; }
         public string Description { get; set; }
         public Nullable<double> Discount { get; set; }
-        public byte[] MainImagePage { get; set; }
         public string MainImagePath { get; set; }
         public byte[] MainImage { get; set; }
     

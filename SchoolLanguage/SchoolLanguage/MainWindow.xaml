@@ -5,21 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolLanguage"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="850">
     <Grid Background="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="67*"/>
             <ColumnDefinition Width="333*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="177*"/>
+            <RowDefinition Height="65*"/>
+            <RowDefinition Height="369*"/>
         </Grid.RowDefinitions>
-            <Image Source="\Resurses\Smeshariki.png"></Image>
-            <TextBlock FontSize="20" Grid.Column="1" Foreground="White">Смешарики.Новый сезон</TextBlock>
-        <StackPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+        <Image Source="\Resurses\Smeshariki.png"></Image>
+        <TextBlock FontSize="20" Grid.Column="1" Foreground="White" Height="28" Width="240">Смешарики.Новый сезон</TextBlock>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="70" Width="130">
             <Button x:Name="QTb" Width="120" >Назад</Button>
             <Button x:Name="WTb" Width="120" >Вперед</Button>
         </StackPanel>
+        <Frame x:Name="MainImage" Grid.Row="1" Grid.Column="1" Margin="0,2,0,0"></Frame>
     </Grid>
 </Window>

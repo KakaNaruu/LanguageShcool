@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="SchoolLanguage.Components.ServerUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchoolLanguage.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="800" Background="White">
+    <Border BorderThickness="3" BorderBrush="Black" Width="700" Margin="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140*"/>
+                <ColumnDefinition Width="627*"/>
+            </Grid.ColumnDefinitions>
+            <Image Height="40" Margin="10" Source="\Resurses\Smeshariki.png" Grid.RowSpan="4" Name="ImageTb"></Image>
+            <TextBlock Grid.Column="1" Name="TitleTb"></TextBlock>
+         
+            <TextBlock Grid.Column="1" Grid.Row="2" Name="DiscountTb"></TextBlock>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock x:Name="CostTb" Visibility="{Binding CostTimeVisibility}" TextDecorations="Strikethrough"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Name="costTimeTb"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+                <Button x:Name="RedactRb">Редактировать</Button>
+                <Button x:Name="DeleteXb">Удалить</Button>
+           </StackPanel>
+
+        </Grid>
+    </Border>
+</UserControl>
