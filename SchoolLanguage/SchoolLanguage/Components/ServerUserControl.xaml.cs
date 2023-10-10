@@ -23,11 +23,17 @@ namespace SchoolLanguage.Components
         public ServerUserControl(Image image, string title, decimal cost,string costTime, string discount)
         {
             InitializeComponent();
+            if(App.isAdmin == false)
+            {
+                EditBtn.Visibility = Visibility.Hidden;
+                DelereBtn.Visibility = Visibility.Hidden;
+            }
             //ImageTb = image;
-            CostTb.Text = cost.ToString();
+            CostTb.Text = cost.ToString("0");
             TitleTb.Text = title;
             costTimeTb.Text = costTime;
             DiscountTb.Text = discount;
+            CostTb.Visibility = costTb.Visibility;
         }
     }
 }

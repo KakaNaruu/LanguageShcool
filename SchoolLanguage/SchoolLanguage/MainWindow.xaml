@@ -17,7 +17,11 @@
         </Grid.RowDefinitions>
         <Image Source="\Resurses\Smeshariki.png"></Image>
         <TextBlock FontSize="20" Grid.Column="1" Foreground="White" Height="28" Width="240">Смешарики.Новый сезон</TextBlock>
-        <StackPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="70" Width="130">
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Button >
+                <TextBlock>Включить<LineBreak/>админа</TextBlock>
+            </Button>
+            <PasswordBox x:Name="PasswordBox"></PasswordBox>
             <Button x:Name="QTb" Width="120" >Назад</Button>
             <Button x:Name="WTb" Width="120" >Вперед</Button>
         </StackPanel>

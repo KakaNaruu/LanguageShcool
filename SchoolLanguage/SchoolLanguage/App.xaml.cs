@@ -14,5 +14,6 @@ namespace SchoolLanguage
     public partial class App : Application
     {
         public static Components.SchoolLanguageEntities db = new Components.SchoolLanguageEntities();
+        public static bool isAdmin = false;
     }
 }

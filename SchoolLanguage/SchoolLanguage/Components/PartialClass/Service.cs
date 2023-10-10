@@ -14,20 +14,31 @@ namespace SchoolLanguage.Components
             get
             {
                 if (Discount != 0)
-                    return $"{Cost} рублей за {DurationInSeconds / 60} минут";
+                    return $"{Cost : 0} рублей за {DurationInSeconds / 60} минут";
                 else
-                    return $"{Cost - (Cost * (decimal) Discount /100)} рублей за {DurationInSeconds / 60}";
+                    return $"{Cost - (Cost * (decimal)Discount / 100):0} рублей за {DurationInSeconds / 60}";
             }
         }
-        public Visibility CostVisibility 
+        public Visibility CostVisibility
         {
             get
             {
                 if (Discount == 0)
                     return Visibility.Collapsed;
-                else 
+                else
                     return Visibility.Visible;
             }
         }
+        public string DiscoubtWhy
+        {
+            get
+            {
+                if ()
+                    return DiscoubtWhy;
+                else
+                    return DiscoubtWhy;
+            }
+        }
+
     }
 }
