@@ -23,7 +23,6 @@
             </Button>
             <PasswordBox x:Name="PasswordBox"></PasswordBox>
             <Button x:Name="QTb" Width="120" >Назад</Button>
-            <Button x:Name="WTb" Width="120" >Вперед</Button>
         </StackPanel>
         <Frame x:Name="MainImage" Grid.Row="1" Grid.Column="1" Margin="0,2,0,0"></Frame>
     </Grid>

@@ -13,7 +13,7 @@ namespace SchoolLanguage.Components
         {
             get
             {
-                if (Discount != 0)
+                if (Discount == null)
                     return $"{Cost : 0} рублей за {DurationInSeconds / 60} минут";
                 else
                     return $"{Cost - (Cost * (decimal)Discount / 100):0} рублей за {DurationInSeconds / 60}";
@@ -23,7 +23,7 @@ namespace SchoolLanguage.Components
         {
             get
             {
-                if (Discount == 0)
+                if (Discount == null)
                     return Visibility.Collapsed;
                 else
                     return Visibility.Visible;
@@ -33,10 +33,10 @@ namespace SchoolLanguage.Components
         {
             get
             {
-                if ()
-                    return DiscoubtWhy;
+                if (Discount ==null)
+                    return null;
                 else
-                    return DiscoubtWhy;
+                    return $"* скидка {Discount}%";
             }
         }
 

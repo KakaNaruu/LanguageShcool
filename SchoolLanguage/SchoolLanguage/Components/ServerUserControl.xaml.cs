@@ -25,15 +25,15 @@ namespace SchoolLanguage.Components
             InitializeComponent();
             if(App.isAdmin == false)
             {
-                EditBtn.Visibility = Visibility.Hidden;
-                DelereBtn.Visibility = Visibility.Hidden;
+                RedactRb.Visibility = Visibility.Hidden;
+                DeleteTb.Visibility = Visibility.Hidden;
             }
             //ImageTb = image;
             CostTb.Text = cost.ToString("0");
             TitleTb.Text = title;
             costTimeTb.Text = costTime;
             DiscountTb.Text = discount;
-            CostTb.Visibility = costTb.Visibility;
+            CostTb.Visibility = CostTb.Visibility;
         }
     }
 }

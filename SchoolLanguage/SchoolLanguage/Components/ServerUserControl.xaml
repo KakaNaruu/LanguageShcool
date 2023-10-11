@@ -28,7 +28,7 @@
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
                 <Button x:Name="RedactRb">Редактировать</Button>
-                <Button x:Name="DeleteXb">Удалить</Button>
+                <Button x:Name="DeleteTb">Удалить</Button>
            </StackPanel>
 
         </Grid>
