@@ -13,10 +13,30 @@
             <RowDefinition Height="371*"/>
             <RowDefinition Height="35*"/>
         </Grid.RowDefinitions>
-
+        <StackPanel Orientation="Horizontal">
+            <ComboBox x:Name="SortCb" SelectionChanged="DiscCb_SelectionChanged">
+                <ComboBoxItem>По умолчанию</ComboBoxItem>
+                <ComboBoxItem>По возрастанию</ComboBoxItem>
+                <ComboBoxItem>По убыванию</ComboBoxItem>
+            </ComboBox>
+            <ComboBox x:Name="DiscountFilterCb" SelectionChanged="DiscountFilterCb_SelectionChanged">
+                <ComboBoxItem>Все</ComboBoxItem>
+                <ComboBoxItem>0% до 5%</ComboBoxItem>
+                <ComboBoxItem>5% до 15%</ComboBoxItem>
+                <ComboBoxItem>15% до 30%</ComboBoxItem>
+                <ComboBoxItem>30% до 70%</ComboBoxItem>
+                <ComboBoxItem>70% до 100%</ComboBoxItem>
+            </ComboBox>
+            <TextBlock>По названию и описанию</TextBlock>
+            <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged" Margin="5" Width="100"></TextBox>
+        </StackPanel>
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
             <WrapPanel x:Name="ServiceWrapPanel" ></WrapPanel>
         </ScrollViewer>
-        <Button x:Name="DobavTb" Grid.Row="2" Margin="5,5,5,5">Добавить</Button>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button x:Name="DobavTb">Добавить</Button>
+            <TextBlock x:Name="CountDateTb" Margin="5"></TextBlock>
+        </StackPanel>
+        
     </Grid>
 </Page>

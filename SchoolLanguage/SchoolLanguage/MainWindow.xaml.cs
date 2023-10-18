@@ -25,16 +25,26 @@ namespace SchoolLanguage
         public MainWindow()
         {
             InitializeComponent();
-            //var path = "@C:\\Users\\222121\\AppData\\Local\\Temp\\Tempeb4bc23e-20d9-4d3c-aed0-39f29236dc2b_Task.zip\\Сессия 1\\services_s_import.zip\\Услуги школы";
-            //foreach(var item in App.db.Service.ToArray())
+            //var path = "\\\\NAS36D451\\user-domain$\\stud\\222121\\Desktop\\Task\\Сессия 1\\services_s_import\\";
+            //foreach (var item in App.db.Service.ToArray())
             //{
-            //    var fullPath = path + item.MainImagePage;
+            //    var fullPath = path + item.MainImagePath.Trim();
             //    var imageByte = File.ReadAllBytes(fullPath);
-            //    item.MainImagePage = imageByte;
+            //    item.MainImage = imageByte;
             //}
             //App.db.SaveChanges();
 
             MainImage.Navigate(new ServiceListPage());
         }
+
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if(PasswordPb.Password = "0000")
+        //    {
+        //        App.isAdmin = true;
+        //        MainFrame.Navigation(new ServiceListPage());
+        //        PasswordPb.Clear();
+        //    }
+        //}
     }
 }

@@ -18,10 +18,13 @@
         <Image Source="\Resurses\Smeshariki.png"></Image>
         <TextBlock FontSize="20" Grid.Column="1" Foreground="White" Height="28" Width="240">Смешарики.Новый сезон</TextBlock>
         <StackPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-            <Button >
+            <Button Click="Button_Click" >
                 <TextBlock>Включить<LineBreak/>админа</TextBlock>
             </Button>
-            <PasswordBox x:Name="PasswordBox"></PasswordBox>
+            <PasswordBox x:Name="PasswordPb"></PasswordBox>
+            <Button >
+                <TextBlock>Выключить<LineBreak/>админа</TextBlock>
+            </Button> 
             <Button x:Name="QTb" Width="120" >Назад</Button>
         </StackPanel>
         <Frame x:Name="MainImage" Grid.Row="1" Grid.Column="1" Margin="0,2,0,0"></Frame>

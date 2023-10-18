@@ -15,5 +15,15 @@
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="Background" Value="Purple"></Setter>
         </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Width" Value="150"></Setter>
+            <Setter Property="Height" Value="35"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Width" Value="150"></Setter>
+            <Setter Property="Height" Value="35"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
