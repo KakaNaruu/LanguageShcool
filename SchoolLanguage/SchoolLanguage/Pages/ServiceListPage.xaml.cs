@@ -49,24 +49,27 @@ namespace SchoolLanguage.Pages
             {
                 ServiceWrapPanel.Children.Add(new ServerUserControl(service));
             }
-            //if(DiscountFilterCb.SelectionIndex != 0)
-            //{
-            //    if(DiscountFilterCb.SelectedIndex == 1)
-            //        services = services.Where(x => x.Discount >= 0 && x.Discount < 5);
-            //    if (DiscountFilterCb.SelectedIndex == 2)
-            //        services = services.Where(x => x.Discount >= 5 && x.Discount < 15);
-            //    if (DiscountFilterCb.SelectedIndex == 3)
-            //        services = services.Where(x => x.Discount >= 15 && x.Discount < 30);
-            //    if (DiscountFilterCb.SelectedIndex == 4)
-            //        services = services.Where(x => x.Discount >= 30 && x.Discount < 70);
-            //    if (DiscountFilterCb.SelectedIndex == 5)
-            //        services = services.Where(x => x.Discount >= 70 && x.Discount < 100);
-            //}
-            //if(SearchTb.Text)
-            //CountDateTb.Text = services.Count() + "из" 
+            if (DiscountFilterCb.SelectedIndex != 0)
+            {
+                if (DiscountFilterCb.SelectedIndex == 1)
+                    services = services.Where(x => x.Discount >= 0 && x.Discount < 5);
+                if (DiscountFilterCb.SelectedIndex == 2)
+                    services = services.Where(x => x.Discount >= 5 && x.Discount < 15);
+                if (DiscountFilterCb.SelectedIndex == 3)
+                    services = services.Where(x => x.Discount >= 15 && x.Discount < 30);
+                if (DiscountFilterCb.SelectedIndex == 4)
+                    services = services.Where(x => x.Discount >= 30 && x.Discount < 70);
+                if (DiscountFilterCb.SelectedIndex == 5)
+                    services = services.Where(x => x.Discount >= 70 && x.Discount < 100);
+            }
+            services = services.Where(x => x.Title.ToLower().Contains(SearchTb.Text.ToLower()) || x.Description.ToLower().Contains(SearchTb.Text.ToLower()));
+            ServiceWrapPanel.Children.Clear();
+            foreach (var service in services)
+            {
+                ServiceWrapPanel.Children.Add(new ServerUserControl(service));
+            }
+            CountDateTb.Text = "Записи: " + services.Count().ToString() + "из 100";
         }
-
-
         private void DiscCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Refresh();
@@ -80,6 +83,11 @@ namespace SchoolLanguage.Pages
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
             Refresh(); 
+        }
+
+        private void DobavTb_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Добавление услуги", new AddEditPage()));
         }
     }
 } 

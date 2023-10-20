@@ -27,16 +27,15 @@
                 <ComboBoxItem>30% до 70%</ComboBoxItem>
                 <ComboBoxItem>70% до 100%</ComboBoxItem>
             </ComboBox>
-            <TextBlock>По названию и описанию</TextBlock>
-            <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged" Margin="5" Width="100"></TextBox>
+            <TextBlock Margin="5">По названию и описанию:</TextBlock>
+            <TextBox x:Name="SearchTb" TextChanged="SearchTb_TextChanged" Width="150" Height="25"></TextBox>
         </StackPanel>
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
             <WrapPanel x:Name="ServiceWrapPanel" ></WrapPanel>
         </ScrollViewer>
         <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button x:Name="DobavTb">Добавить</Button>
+            <Button x:Name="DobavTb" Click="DobavTb_Click">Добавить</Button>
             <TextBlock x:Name="CountDateTb" Margin="5"></TextBlock>
         </StackPanel>
-        
     </Grid>
 </Page>

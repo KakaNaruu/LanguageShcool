@@ -22,11 +22,10 @@ namespace SchoolLanguage.Components
     public partial class ServerUserControl : UserControl
     {
         Service service;
-        public ServerUserControl(Service service)
+        public ServerUserControl(Service _service)
         {
-            
             InitializeComponent();
-            service = service;
+            service = _service;
             if (App.isAdmin == false)
             {
                 RedactRb.Visibility = Visibility.Hidden;
