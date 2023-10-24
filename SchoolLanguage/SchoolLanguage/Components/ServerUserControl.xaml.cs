@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SchoolLanguage.Pages;
+using SchoolLanguage.Properties;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -40,16 +42,22 @@ namespace SchoolLanguage.Components
             MainBorder.Background = service.DiscountBrush;
         }
         private BitmapImage GetImageSource(byte[] byteImage)
-        { 
+        {
             BitmapImage bitmapImage = new BitmapImage();
             try
             {
-                MemoryStream byteStream = new MemoryStream(byteImage);
-               
-                bitmapImage.BeginInit();
-                bitmapImage.StreamSource = byteStream;
-                bitmapImage.EndInit();
-                return bitmapImage;
+                if(service.MainImage != null)
+                {
+                    MemoryStream byteStream = new MemoryStream(byteImage);
+                    bitmapImage.BeginInit();
+                    bitmapImage.StreamSource = byteStream;
+                    bitmapImage.EndInit();
+                    return bitmapImage;
+                }
+                else
+                    {
+                        bitmapImage = new BitmapImage(new Uri(@"\Resurses\Smeshariki.png", UriKind.Relative));
+                    }
             }
             catch(Exception ex)
             {
@@ -69,6 +77,11 @@ namespace SchoolLanguage.Components
                 App.db.Service.Remove(service);
                 App.db.SaveChanges();
             }
+        }
+
+        private void RedactRb_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Редактирование услуги", new AddEditPage(new Service())));
         }
     }
 }

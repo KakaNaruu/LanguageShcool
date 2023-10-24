@@ -5,40 +5,40 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SchoolLanguage.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="600"
       Title="AddEditPage">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Индетификатор</TextBlock>
-                <TextBox IsEnabled="False" x:Name="IdTb"></TextBox>
+                <TextBox Text ="{Binding ID}"  IsEnabled="False" x:Name="IdTb"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Название</TextBlock>
-                <TextBox x:Name="NameTb"></TextBox>
+                <TextBox Text ="{Binding Title}" x:Name="NameTb"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Стоимость</TextBlock>
-                <TextBox  x:Name="PriceTb"></TextBox>
+                <TextBox  Text ="{Binding Cost}" x:Name="PriceTb"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Длительность</TextBlock>
-                <TextBox  x:Name="LongTb"></TextBox>
+                <TextBox Text ="{Binding DurationInSeconds}" x:Name="LongTb"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock>Описание</TextBlock>
-                    <TextBox x:Name="OpisTb"></TextBox>
+                <TextBlock>Описание</TextBlock>
+                <TextBox Text ="{Binding Description}" x:Name="OpisTb"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Скидка</TextBlock>
-                <TextBox x:Name="SkidkaTb"></TextBox>
+                <TextBox Text ="{Binding Discount}" x:Name="SkidkaTb"></TextBox>
             </StackPanel>
             <StackPanel>
                 <Image Height="90"></Image>
-                <Button x:Name="SaveBtm">Изменить изображение</Button>
+                <Button x:Name="SaveBtm" Click="SaveBtm_Click">Изменить изображение</Button>
             </StackPanel>
             <StackPanel>
-                <Button x:Name="SohBtn">Сохранить</Button>
+                <Button x:Name="SohBtn" Click="SohBtn_Click">Сохранить</Button>
             </StackPanel>
         </StackPanel>
     </Grid>

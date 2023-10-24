@@ -87,7 +87,7 @@ namespace SchoolLanguage.Pages
 
         private void DobavTb_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent("Добавление услуги", new AddEditPage()));
+            Navigation.NextPage(new PageComponent("Добавление услуги", new AddEditPage(new Service())));
         }
     }
 } 

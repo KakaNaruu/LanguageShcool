@@ -14,14 +14,14 @@ namespace SchoolLanguage.Components
         {
             get
             {
-                if (DiscountBrush != null)
+                if (Discount != null)
                     return Cost - (Cost * (decimal)Discount / 100);
                 else
                     return Cost;
             }
         }
         public string CostTime
-        {
+        { 
             get
             {
                 if (Discount == null)
