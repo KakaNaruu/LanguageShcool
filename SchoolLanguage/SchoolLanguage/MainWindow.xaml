@@ -24,7 +24,7 @@
             <PasswordBox x:Name="PasswordPb"></PasswordBox>
             <Button Click="Button_Click_1">
                 <TextBlock>Выключить<LineBreak/>админа</TextBlock>
-            </Button> 
+            </Button>
             <Button x:Name="QTb" Width="120" Click="QTb_Click" >Назад</Button>
         </StackPanel>
         <Frame x:Name="MainFrame" Grid.Row="1" Grid.Column="1" Margin="0,2,0,0"></Frame>

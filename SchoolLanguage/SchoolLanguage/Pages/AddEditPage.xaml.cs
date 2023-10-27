@@ -23,32 +23,61 @@ namespace SchoolLanguage.Pages
     /// </summary>
     public partial class AddEditPage : Page
     {
-        private Service _service;
+        private Service service;
         public AddEditPage(Service _service)
         {
             InitializeComponent();
             this.DataContext = _service;
+            service = _service;
         }
 
         private void SaveBtm_Click(object sender, RoutedEventArgs e)
         {
-            if(_service.ID == 0)
+            StringBuilder errors = new StringBuilder();
+            if (service.ID == 0)
             {
-                App.db.Service.Add(_service);
+                if(App.db.Service.Any(x => x.Title == service.Title))
+                {
+                    errors.AppendLine("Такая услуга уже существует");
+                }
+                else
+                {
+                    App.db.Service.Add(service);
+                }
             }
-            App.db.SaveChanges();
+            if(service.DurationInSeconds > 14400)
+            {
+                errors.AppendLine("Длительность не может превышать 4х часов");
+            }
+            if(errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+            }
+            else
+            {
+                App.db.SaveChanges();
+                MessageBox.Show("Сохранено!");
+                Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
+            }
         }
-
         private void SohBtn_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog()
             {
+
                 Filter = "*.png|*.png|*.jpg|*.jpg|*.jpeg|*.jpeg"
             };
             if(openFile.ShowDialog().GetValueOrDefault())
             {
-                service.MainImage = File.ReadAllText(OpenFile.FileName);
-                MainImage.Source = new BitmapImage(NewsStyleUriParser Uri(OpenFile.FileName));
+                service.MainImage = File.ReadAllBytes(openFile.FileName);
+                service.MainImagePath = openFile.FileName;
+            }
+        }
+        private void LongTb_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!(char.IsDigit(e.Text[0])))
+            {
+                e.Handled = true;
             }
         }
     }

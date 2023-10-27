@@ -37,7 +37,6 @@ namespace SchoolLanguage
 
             Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (PasswordPb.Password == "0000")
@@ -47,16 +46,14 @@ namespace SchoolLanguage
                 PasswordPb.Clear();
             }
         }
-
-        private void QTb_Click(object sender, RoutedEventArgs e)
-        {
-            Navigation.BackPage();
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             App.isAdmin = false;
             Navigation.NextPage(new PageComponent("Список услуг", new ServiceListPage()));
+        }
+        private void QTb_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.BackPage();
         }
     }
 }

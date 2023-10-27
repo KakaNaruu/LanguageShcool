@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:SchoolLanguage.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="600"
-      Title="AddEditPage">
+      Title="AddEditPage" Background="White">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
@@ -19,11 +19,11 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Стоимость</TextBlock>
-                <TextBox  Text ="{Binding Cost}" x:Name="PriceTb"></TextBox>
+                <TextBox  Text ="{Binding Cost}" x:Name="PriceTb" PreviewTextInput="LongTb_PreviewTextInput"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Длительность</TextBlock>
-                <TextBox Text ="{Binding DurationInSeconds}" x:Name="LongTb"></TextBox>
+                <TextBox Text ="{Binding DurationInSeconds}" x:Name="LongTb" PreviewTextInput="LongTb_PreviewTextInput"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Описание</TextBlock>
@@ -31,11 +31,20 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock>Скидка</TextBlock>
-                <TextBox Text ="{Binding Discount}" x:Name="SkidkaTb"></TextBox>
+                <TextBox Text ="{Binding Discount}" x:Name="SkidkaTb" PreviewTextInput="LongTb_PreviewTextInput"></TextBox>
             </StackPanel>
             <StackPanel>
-                <Image Height="90"></Image>
+                <Image Source="{Binding MainImage}"  Height="90"></Image>
                 <Button x:Name="SaveBtm" Click="SaveBtm_Click">Изменить изображение</Button>
+                <ListView x:Name="{Binding}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn>
+                                <Image Source="{Binding PhotoByte}"></Image>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </StackPanel>
             <StackPanel>
                 <Button x:Name="SohBtn" Click="SohBtn_Click">Сохранить</Button>

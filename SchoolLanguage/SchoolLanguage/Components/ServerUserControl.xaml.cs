@@ -81,7 +81,21 @@ namespace SchoolLanguage.Components
 
         private void RedactRb_Click(object sender, RoutedEventArgs e)
         {
-            Navigation.NextPage(new PageComponent("Редактирование услуги", new AddEditPage(new Service())));
+            Navigation.NextPage(new PageComponent("Редактирование услуги", new AddEditPage(service)));
         }
     }
 }
+
+
+//public partial class ProductUserControl : UserControl
+//{
+//    public ProductUserControl(Image image, string title, decimal cost, string costTime, string discount)
+//    {
+//        InitializeComponent();
+//        //ImageTb = image;
+//        TitleTb.Text = title;
+//        CostTb.Text = cost.ToString("0");
+//        costTimeTb.Text = costTime;
+//        DiscountTb.Text = discount;
+//    }
+//}
