@@ -29,6 +29,7 @@ namespace SchoolLanguage.Pages
             InitializeComponent();
             this.DataContext = _service;
             service = _service;
+            RefheshPhoto();
         }
 
         private void SaveBtm_Click(object sender, RoutedEventArgs e)
@@ -78,6 +79,33 @@ namespace SchoolLanguage.Pages
             if (!(char.IsDigit(e.Text[0])))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void AddImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog()
+            {
+
+                Filter = "*.png|*.png|*.jpg|*.jpg|*.jpeg|*.jpeg"
+            };
+            if (openFile.ShowDialog().GetValueOrDefault())
+            {
+                App.db.ServicePhoto.Add(new ServicePhoto
+                {
+                    ServiceID = service.ID,
+                    PhotoByte = File.ReadAllBytes(openFile.FileName)
+                });
+                App.db.SaveChanges();
+                RefheshPhoto();
+            }
+        }
+        private void RefheshPhoto()
+        {
+            PhotoWp.Children.Clear();
+            foreach (var photo in service.ServicePhoto)
+            {
+                PhotoWp.Children.Add(new PhotoUserControl(photo));
             }
         }
     }

@@ -64,6 +64,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Components\PhotoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\ServerUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +112,9 @@
     </Compile>
     <Compile Include="Components\Navigation.cs" />
     <Compile Include="Components\PartialClass\Service.cs" />
+    <Compile Include="Components\PhotoUserControl.xaml.cs">
+      <DependentUpon>PhotoUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\Product.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

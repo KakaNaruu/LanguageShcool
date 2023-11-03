@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SchoolLanguage.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="600"
+      d:DesignHeight="650" d:DesignWidth="600"
       Title="AddEditPage" Background="White">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
@@ -36,6 +36,12 @@
             <StackPanel>
                 <Image Source="{Binding MainImage}"  Height="90"></Image>
                 <Button x:Name="SaveBtm" Click="SaveBtm_Click">Изменить изображение</Button>
+                <StackPanel>
+                    <ScrollViewer Margin="2" HorizontalAlignment="Center" HorizontalScrollBarVisibility="Disabled">
+                        <WrapPanel Height="100" Width="300" x:Name="PhotoWp"></WrapPanel>
+                    </ScrollViewer>
+                    <Button x:Name="AddImageBtn" Click="AddImageBtn_Click">Добавить изображение</Button>
+                </StackPanel>
                 <ListView x:Name="{Binding}">
                     <ListView.View>
                         <GridView>
