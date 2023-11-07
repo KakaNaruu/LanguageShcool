@@ -13,7 +13,6 @@
         <EntityTypeShape EntityType="SchoolLanguageModel.Product" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolLanguageModel.ProductPhoto" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolLanguageModel.ProductSale" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolLanguageModel.ServicePhoto" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolLanguageModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolLanguageModel.Tag" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
         <AssociationConnector Association="SchoolLanguageModel.FK_Client_Gender" ManuallyRouted="false" />
@@ -27,6 +26,7 @@
         <AssociationConnector Association="SchoolLanguageModel.TagOfClient" ManuallyRouted="false" />
         <EntityTypeShape EntityType="SchoolLanguageModel.Service" Width="1.5" PointX="0.75" PointY="15.75" />
         <AssociationConnector Association="SchoolLanguageModel.FK_ClientService_Service" />
+        <EntityTypeShape EntityType="SchoolLanguageModel.ServicePhoto" Width="1.5" PointX="3" PointY="19.375" />
         <AssociationConnector Association="SchoolLanguageModel.FK_ServicePhoto_Service" />
       </Diagram>
     </edmx:Diagrams>

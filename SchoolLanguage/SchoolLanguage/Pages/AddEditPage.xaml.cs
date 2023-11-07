@@ -27,6 +27,7 @@ namespace SchoolLanguage.Pages
         public AddEditPage(Service _service)
         {
             InitializeComponent();
+            App.servicePage = this;
             this.DataContext = _service;
             service = _service;
             RefheshPhoto();
@@ -100,13 +101,19 @@ namespace SchoolLanguage.Pages
                 RefheshPhoto();
             }
         }
-        private void RefheshPhoto()
+        public void RefheshPhoto()
         {
             PhotoWp.Children.Clear();
             foreach (var photo in service.ServicePhoto)
             {
                 PhotoWp.Children.Add(new PhotoUserControl(photo));
             }
+            BitmapImage bitmapImage = new BitmapImage();
+            MemoryStream byteStream = new MemoryStream(service.MainImage);
+            bitmapImage.BeginInit();
+            bitmapImage.StreamSource = byteStream;
+            bitmapImage.EndInit();
+            MainImage.Source = service.MainImage;
         }
     }
 }

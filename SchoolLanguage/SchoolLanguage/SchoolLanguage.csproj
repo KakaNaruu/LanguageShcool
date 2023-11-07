@@ -83,6 +83,7 @@
     <Compile Include="Components\Client.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\Clients.cs" />
     <Compile Include="Components\ClientService.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -147,6 +148,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ClientRecordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ServiceListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,6 +160,9 @@
   <ItemGroup>
     <Compile Include="Pages\AddEditPage.xaml.cs">
       <DependentUpon>AddEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClientRecordPage.xaml.cs">
+      <DependentUpon>ClientRecordPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ServiceListPage.xaml.cs">
       <DependentUpon>ServiceListPage.xaml</DependentUpon>

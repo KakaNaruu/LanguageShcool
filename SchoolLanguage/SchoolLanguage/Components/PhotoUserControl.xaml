@@ -12,8 +12,8 @@
                 <Image Height="250" Source="{Binding PhotoByte}"></Image>
             </StackPanel>
             <StackPanel>
-                <Button x:Name="MainBtn">Сделать главным</Button>
-                <Button x:Name="Delete">Удалить</Button>
+                <Button x:Name="MainBtn" Click="MainBtn_Click">Сделать главным</Button>
+                <Button x:Name="Delete" Click="Delete_Click">Удалить</Button>
             </StackPanel>
         </StackPanel>
     </Grid>

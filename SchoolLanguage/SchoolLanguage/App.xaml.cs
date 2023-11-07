@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolLanguage.Pages;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -15,5 +16,7 @@ namespace SchoolLanguage
     {
         public static Components.SchoolLanguageEntities db = new Components.SchoolLanguageEntities();
         public static bool isAdmin = false;
+        public static MainWindow mainWindow;
+        public static AddEditPage servicePage;
     }
 }

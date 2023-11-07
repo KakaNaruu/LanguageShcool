@@ -462,16 +462,6 @@
           <NavigationProperty Name="ClientService" Relationship="Self.FK_ProductSale_ClientService" FromRole="ProductSale" ToRole="ClientService" />
           <NavigationProperty Name="Product" Relationship="Self.FK_ProductSale_Product" FromRole="ProductSale" ToRole="Product" />
         </EntityType>
-        <EntityType Name="ServicePhoto">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ServiceID" Type="Int32" Nullable="false" />
-          <Property Name="PhotoPath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Service" Relationship="SchoolLanguageModel.FK_ServicePhoto_Service" FromRole="ServicePhoto" ToRole="Service" />
-          <Property Name="PhotoByte" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -592,7 +582,6 @@
           <EntitySet Name="Product" EntityType="Self.Product" />
           <EntitySet Name="ProductPhoto" EntityType="Self.ProductPhoto" />
           <EntitySet Name="ProductSale" EntityType="Self.ProductSale" />
-          <EntitySet Name="ServicePhoto" EntityType="Self.ServicePhoto" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tag" EntityType="Self.Tag" />
           <AssociationSet Name="FK_Client_Gender" Association="Self.FK_Client_Gender">
@@ -636,6 +625,7 @@
             <End Role="Service" EntitySet="Service" />
             <End Role="ClientService" EntitySet="ClientService" />
           </AssociationSet>
+          <EntitySet Name="ServicePhoto" EntityType="SchoolLanguageModel.ServicePhoto" />
           <AssociationSet Name="FK_ServicePhoto_Service" Association="SchoolLanguageModel.FK_ServicePhoto_Service">
             <End Role="Service" EntitySet="Service" />
             <End Role="ServicePhoto" EntitySet="ServicePhoto" />
@@ -668,6 +658,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ServicePhoto">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceID" Type="Int32" Nullable="false" />
+          <Property Name="PhotoByte" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Service" Relationship="SchoolLanguageModel.FK_ServicePhoto_Service" FromRole="ServicePhoto" ToRole="Service" />
+        </EntityType>
         <Association Name="FK_ServicePhoto_Service">
           <End Type="SchoolLanguageModel.Service" Role="Service" Multiplicity="1" />
           <End Type="SchoolLanguageModel.ServicePhoto" Role="ServicePhoto" Multiplicity="*" />
@@ -772,15 +771,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ServicePhoto">
-            <EntityTypeMapping TypeName="SchoolLanguageModel.ServicePhoto">
-              <MappingFragment StoreEntitySet="ServicePhoto">
-                <ScalarProperty Name="PhotoByte" ColumnName="PhotoByte" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="SchoolLanguageModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -827,6 +817,15 @@
                 <ScalarProperty Name="DurationInSeconds" ColumnName="DurationInSeconds" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServicePhoto">
+            <EntityTypeMapping TypeName="SchoolLanguageModel.ServicePhoto">
+              <MappingFragment StoreEntitySet="ServicePhoto">
+                <ScalarProperty Name="PhotoByte" ColumnName="PhotoByte" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

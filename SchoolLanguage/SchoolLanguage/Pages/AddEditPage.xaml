@@ -42,15 +42,6 @@
                     </ScrollViewer>
                     <Button x:Name="AddImageBtn" Click="AddImageBtn_Click">Добавить изображение</Button>
                 </StackPanel>
-                <ListView x:Name="{Binding}">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn>
-                                <Image Source="{Binding PhotoByte}"></Image>
-                            </GridViewColumn>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
             </StackPanel>
             <StackPanel>
                 <Button x:Name="SohBtn" Click="SohBtn_Click">Сохранить</Button>

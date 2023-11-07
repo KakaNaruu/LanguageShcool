@@ -20,9 +20,28 @@ namespace SchoolLanguage.Components
     /// </summary>
     public partial class PhotoUserControl : UserControl
     {
+        ServicePhoto servicePhoto;
         public PhotoUserControl()
         {
             InitializeComponent();
+            servicePhoto = servicePhoto;
+            this.DataContext = servicePhoto;
+        }
+
+        private void MainBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var selPhoto = servicePhoto.PhotoByte;
+            servicePhoto.PhotoByte = servicePhoto.Service.MainImage;
+            servicePhoto.Service.MainImage = selPhoto;
+            App.servicePage.RefheshPhoto();
+            App.db.SaveChanges();
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            App.db.ServicePhoto.Remove(servicePhoto);
+            App.db.SaveChanges();
+            App.servicePage.RefheshPhoto();
         }
     }
 }
