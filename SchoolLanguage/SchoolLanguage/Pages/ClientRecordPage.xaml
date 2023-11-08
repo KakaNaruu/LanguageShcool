@@ -15,10 +15,10 @@
             <DatePicker Margin="2" Name="DateDp"></DatePicker>
             <StackPanel Orientation="Horizontal">
                 <TextBlock>Время XX:XX</TextBlock>
-                <TextBox Width="70" Name="StartTimeTb"></TextBox>
+                <TextBox Width="70" Name="StartTimeTb" TextChanged="StartTimeTb_TextChanged"></TextBox>
                 <TextBox Width="70" Name="EndTimeTb" IsEnabled="False"></TextBox>
             </StackPanel>
-            <Button Name="EntryBtn">Записать</Button>
+            <Button Name="EntryBtn" Click="EntryBtn_Click">Записать</Button>
         </StackPanel>
     </Grid>
 </Page>
